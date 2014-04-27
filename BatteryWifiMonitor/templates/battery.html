@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block box_title %}
+{% block title %}
+Battery view
+{% endblock %}
+{% endblock %}
+
+{% block script %}
+<script src="{% static "js/battery.js" %}"></script>
+<script>
+$( document ).ready(function() {
+    initial_battery("{{ battery_str }}");
+});
+</script>
+{% endblock %}
+
+{% block header %}
+Battery info:
+{% endblock %}
+
+{% block info %}
+    <div id="info">
+        <span class="battery-title">Status: </span> 
+        <span id="battery-status"></span>
+        <br/>
+        <span class="battery-title">Percent: </span>
+        <span id="battery-percent"></span>
+        <br/>
+        <span class="battery-title">Time
+            <span id="battery-time-info"></span>:
+        </span>
+        <span id="battery-time"></span>
+        <br/>
+    </div>
+    <div id="battery-graph">
+        <div id="battery-bar" style="width:0%;"></div>
+    </div>
+{% endblock %}

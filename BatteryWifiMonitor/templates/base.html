@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+        {% block script %}{% endblock %}
+        <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    </head>
+
+    <body>
+        <div id="box">
+            <div id="title"><h2>{% block box_title %}{% endblock %}</h2></div>
+            <div id="content">
+                <h2>{% block header %}{% endblock %}</h2>
+                {% block info %}
+                    <div id="info">
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
