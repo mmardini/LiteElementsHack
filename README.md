@@ -2,7 +2,7 @@ LiteElementsHack
 ================
 
 A Django web application to display information about the battery and WiFi
-networks of an Ubuntu (12.04+) machine.
+networks of an Ubuntu (12.04+) machine (_Tested on Ubuntu 13.10_).
 
 ![Screenshot](https://raw.githubusercontent.com/mmardini/LiteElementsHack/master/Screenshot.png)
 
@@ -57,7 +57,8 @@ Frontend code
 -------------
 * HTML Templates: The templates (`BatteryWifiMonitor\templates\`) use Django's
 template inheritance to avoid repetition of HTML and to load only the needed
-Javascript code for each task.
+Javascript code for each task. The battery meter uses a pure CSS solution
+rather than an HTML5 `meter` element for backward browser compatibility.
 * Javascript: `BatteryWifiMonitor\static\js\wifi.js` and
 `BatteryWifiMonitor\static\js\battery.js` conatin the jQuery code that gets
 the initial JSON and the subsequent updates JSON and display the data in WiFi
